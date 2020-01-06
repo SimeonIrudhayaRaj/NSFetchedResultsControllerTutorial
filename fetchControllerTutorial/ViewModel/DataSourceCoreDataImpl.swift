@@ -109,6 +109,8 @@ private extension DataSourceCoreDataImpl {
         let fetchRequest = NSFetchRequest<Cell>(entityName: "Cell")
         let fetchSort = NSSortDescriptor(key: sortType, ascending: true)
         fetchRequest.sortDescriptors = [fetchSort]
+        
+        // When changing sort type, merely changing the sortDescriptor is not sufficient. Instead, the whole fetchedResultsController has to be re-initialized.
         self.fetchedResultsController = NSFetchedResultsController<Cell>(
             fetchRequest: fetchRequest,
             managedObjectContext: context,
