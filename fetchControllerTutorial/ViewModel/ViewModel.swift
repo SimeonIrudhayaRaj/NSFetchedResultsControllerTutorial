@@ -30,8 +30,8 @@ extension ViewModel {
     }
     
     func addNewCell(name: String) {
-        let id = String(dataSource.cells.count + 1)
-        let time = Int64(Date().timeIntervalSince1970) * 1_000
+        let id = UUID().uuidString
+        let time = currentTime
         dataSource.addNewCell(
             name: name,
             id: id,
@@ -45,14 +45,16 @@ extension ViewModel {
     
     func collectionViewCellViewModel(for indexPath: IndexPath) -> CollectionViewCellViewModel {
         let cell = dataSource.cells[indexPath.item]
+        
         return CollectionViewCellViewModel(
             idLabelText: cell.id!,
-            nameLabelText: cell.name!
+            nameLabelText: cell.name!,
+            timeLabelText: getCellTimeLabelText(from: cell)
         )
     }
     
     func updateTimeButtonPressed(id: String) {
-        let newTime = Int64(Date().timeIntervalSince1970) * 1_000
+        let newTime = currentTime
         dataSource.updateCellTime(id: id, newTime: newTime)
     }
 
@@ -77,5 +79,18 @@ extension ViewModel: DataSourceObserver {
     
     func cellUpdated(at indexPath: IndexPath) {
         view?.collectionViewReloadItems(at: Set<IndexPath>([indexPath]))
+    }
+}
+
+// MARK: - Util
+private extension ViewModel {
+    var currentTime: Int64 {
+        Int64(Date().timeIntervalSince1970)
+    }
+    
+    func getCellTimeLabelText(from cell: Cell) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yyyy hh:mm:ss a"
+        return dateFormatter.string(from: Date(timeIntervalSince1970: TimeInterval("\(cell.time)")!))
     }
 }

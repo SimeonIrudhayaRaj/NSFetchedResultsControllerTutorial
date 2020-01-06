@@ -12,8 +12,7 @@ class CollectionViewItem: NSCollectionViewItem {
     // MARK: - IBOutlets
     @IBOutlet private weak var nameLabel: NSTextField!
     @IBOutlet private weak var idLabel: NSTextField!
-    @IBOutlet private weak var time: NSTextField!
-    
+    @IBOutlet weak var timeLabel: NSTextField!
     // MARK: - Properties
     weak var delegate: CollectionViewItemDelegate?
 }
@@ -23,6 +22,7 @@ extension CollectionViewItem {
     func render(_ viewModel: CollectionViewCellViewModel) {
         nameLabel.stringValue = viewModel.nameLabelText
         idLabel.stringValue = viewModel.idLabelText
+        timeLabel.stringValue = viewModel.timeLabelText
     }
 }
 
