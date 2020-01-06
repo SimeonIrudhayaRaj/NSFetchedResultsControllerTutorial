@@ -9,51 +9,30 @@
 import Cocoa
 
 class CollectionViewItem: NSCollectionViewItem {
+    // MARK: - IBOutlets
+    @IBOutlet private weak var nameLabel: NSTextField!
+    @IBOutlet private weak var idLabel: NSTextField!
+    @IBOutlet private weak var time: NSTextField!
     
-    @IBOutlet weak var nameLabel: NSTextField!
-    
-    @IBOutlet weak var idLabel: NSTextField!
-    @IBOutlet weak var time: NSTextField!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do view setup here.
+    // MARK: - Properties
+    weak var delegate: CollectionViewItemDelegate?
+}
+
+// MARK: - Exposed functions
+extension CollectionViewItem {
+    func render(_ viewModel: CollectionViewCellViewModel) {
+        nameLabel.stringValue = viewModel.nameLabelText
+        idLabel.stringValue = viewModel.idLabelText
     }
-    
+}
+
+// MARK: - IBActions
+private extension CollectionViewItem {
     @IBAction func updateTime(_ sender: Any) {
-        let newTime = Int64(Date().timeIntervalSince1970) * 1_000
-        let context = FetchController.sharedInstance.context
-        let fetchRequest = NSFetchRequest<Cell>(entityName: "Cell")
-        fetchRequest.predicate = NSPredicate(format: "id == %@", idLabel.stringValue)
-        do {
-            guard let cell = try context.fetch(fetchRequest).first else { fatalError() }
-            cell.time = newTime
-            
-            try context.save()
-        } catch let err {
-            print(err)
-        }
-        
+        delegate?.updateTimeButtonPressed(id: idLabel.stringValue)
     }
     
     @IBAction func delete(_ sender: Any) {
-        let context = FetchController.sharedInstance.context
-        let fetchedResultsController: NSFetchedResultsController<Cell>
-        let fetchRequest = NSFetchRequest<Cell>(entityName: "Cell")
-        let fetchSort = NSSortDescriptor(key: "name", ascending: true)
-        fetchRequest.sortDescriptors = [fetchSort]
-        fetchRequest.predicate = NSPredicate(format: "id == %@", idLabel.stringValue)
-        fetchedResultsController = NSFetchedResultsController<Cell>(
-            fetchRequest: fetchRequest,
-            managedObjectContext: context,
-            sectionNameKeyPath: nil,
-            cacheName: nil)
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let err {
-            print(err)
-        }
-        for object in fetchedResultsController.fetchedObjects ?? [] {
-            context.delete(object)
-        }
+        delegate?.deleteButtonPressed(id: idLabel.stringValue)
     }
 }

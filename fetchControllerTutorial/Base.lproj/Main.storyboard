@@ -722,6 +722,9 @@
                                                 <size key="itemSize" width="200" height="200"/>
                                             </collectionViewFlowLayout>
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="ApM-PY-IqT"/>
+                                            </connections>
                                         </collectionView>
                                     </subviews>
                                 </clipView>
@@ -739,10 +742,10 @@
                                 <buttonCell key="cell" type="push" title="TimeSort" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="KXS-su-a89">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
-                                    <connections>
-                                        <action selector="timeSort:" target="XfG-lQ-9wD" id="tb8-32-fRQ"/>
-                                    </connections>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="sortByTimeButtonPressed:" target="XfG-lQ-9wD" id="UE5-t8-dov"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mF9-27-v4h">
                                 <rect key="frame" x="262" y="-7" width="101" height="32"/>
@@ -751,7 +754,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="nameSort:" target="XfG-lQ-9wD" id="aOF-cn-yl6"/>
+                                    <action selector="sortByNameButtonPressed:" target="XfG-lQ-9wD" id="Zxb-3I-KlX"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JYr-sd-qiO">
@@ -761,7 +764,7 @@
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
-                                    <action selector="add:" target="XfG-lQ-9wD" id="4g3-mg-OxT"/>
+                                    <action selector="addCellButtonPressed:" target="XfG-lQ-9wD" id="rHF-dL-r5X"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d0P-RQ-T5l">

@@ -16,7 +16,16 @@
 		CB1EB52F23BF3840003F5683 /* fetchControllerTutorialUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB52E23BF3840003F5683 /* fetchControllerTutorialUITests.swift */; };
 		CB1EB53E23BF394F003F5683 /* CollectionViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB53C23BF394F003F5683 /* CollectionViewItem.swift */; };
 		CB1EB53F23BF394F003F5683 /* CollectionViewItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = CB1EB53D23BF394F003F5683 /* CollectionViewItem.xib */; };
-		CB1EB54323BF3E4A003F5683 /* FetchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB54223BF3E4A003F5683 /* FetchController.swift */; };
+		CB1EB57723C34A35003F5683 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB57623C34A35003F5683 /* ViewModel.swift */; };
+		CB1EB57923C34A3D003F5683 /* ViewModelAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB57823C34A3D003F5683 /* ViewModelAssembler.swift */; };
+		CB1EB57B23C34C60003F5683 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB57A23C34C60003F5683 /* View.swift */; };
+		CB1EB57D23C34D1A003F5683 /* CollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB57C23C34D1A003F5683 /* CollectionViewCellViewModel.swift */; };
+		CB1EB57F23C34EF9003F5683 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB57E23C34EF9003F5683 /* DataSource.swift */; };
+		CB1EB58123C34F0E003F5683 /* DataSourceCoreDataImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB58023C34F0E003F5683 /* DataSourceCoreDataImpl.swift */; };
+		CB1EB58323C34F58003F5683 /* DataSourceCoreDataImplAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB58223C34F58003F5683 /* DataSourceCoreDataImplAssembler.swift */; };
+		CB1EB58523C35014003F5683 /* CoreDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB58423C35014003F5683 /* CoreDataService.swift */; };
+		CB1EB58723C35590003F5683 /* DataSourceObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB58623C35590003F5683 /* DataSourceObserver.swift */; };
+		CB1EB58923C35935003F5683 /* CollectionViewItemDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB1EB58823C35935003F5683 /* CollectionViewItemDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +62,16 @@
 		CB1EB53023BF3840003F5683 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CB1EB53C23BF394F003F5683 /* CollectionViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewItem.swift; sourceTree = "<group>"; };
 		CB1EB53D23BF394F003F5683 /* CollectionViewItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionViewItem.xib; sourceTree = "<group>"; };
-		CB1EB54223BF3E4A003F5683 /* FetchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchController.swift; sourceTree = "<group>"; };
+		CB1EB57623C34A35003F5683 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CB1EB57823C34A3D003F5683 /* ViewModelAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelAssembler.swift; sourceTree = "<group>"; };
+		CB1EB57A23C34C60003F5683 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
+		CB1EB57C23C34D1A003F5683 /* CollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellViewModel.swift; sourceTree = "<group>"; };
+		CB1EB57E23C34EF9003F5683 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		CB1EB58023C34F0E003F5683 /* DataSourceCoreDataImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceCoreDataImpl.swift; sourceTree = "<group>"; };
+		CB1EB58223C34F58003F5683 /* DataSourceCoreDataImplAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceCoreDataImplAssembler.swift; sourceTree = "<group>"; };
+		CB1EB58423C35014003F5683 /* CoreDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataService.swift; sourceTree = "<group>"; };
+		CB1EB58623C35590003F5683 /* DataSourceObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSourceObserver.swift; sourceTree = "<group>"; };
+		CB1EB58823C35935003F5683 /* CollectionViewItemDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewItemDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,7 +102,6 @@
 		CB1EB50123BF383F003F5683 = {
 			isa = PBXGroup;
 			children = (
-				CB1EB54223BF3E4A003F5683 /* FetchController.swift */,
 				CB1EB50C23BF383F003F5683 /* fetchControllerTutorial */,
 				CB1EB52223BF3840003F5683 /* fetchControllerTutorialTests */,
 				CB1EB52D23BF3840003F5683 /* fetchControllerTutorialUITests */,
@@ -107,12 +124,22 @@
 			children = (
 				CB1EB50D23BF383F003F5683 /* AppDelegate.swift */,
 				CB1EB50F23BF383F003F5683 /* ViewController.swift */,
+				CB1EB57623C34A35003F5683 /* ViewModel.swift */,
+				CB1EB57A23C34C60003F5683 /* View.swift */,
+				CB1EB57E23C34EF9003F5683 /* DataSource.swift */,
+				CB1EB58023C34F0E003F5683 /* DataSourceCoreDataImpl.swift */,
+				CB1EB58223C34F58003F5683 /* DataSourceCoreDataImplAssembler.swift */,
+				CB1EB58623C35590003F5683 /* DataSourceObserver.swift */,
+				CB1EB57823C34A3D003F5683 /* ViewModelAssembler.swift */,
+				CB1EB57C23C34D1A003F5683 /* CollectionViewCellViewModel.swift */,
+				CB1EB58423C35014003F5683 /* CoreDataService.swift */,
 				CB1EB51423BF3840003F5683 /* Assets.xcassets */,
 				CB1EB51623BF3840003F5683 /* Main.storyboard */,
 				CB1EB51923BF3840003F5683 /* Info.plist */,
 				CB1EB51A23BF3840003F5683 /* fetchControllerTutorial.entitlements */,
 				CB1EB51123BF383F003F5683 /* fetchControllerTutorial.xcdatamodeld */,
 				CB1EB53C23BF394F003F5683 /* CollectionViewItem.swift */,
+				CB1EB58823C35935003F5683 /* CollectionViewItemDelegate.swift */,
 				CB1EB53D23BF394F003F5683 /* CollectionViewItem.xib */,
 			);
 			path = fetchControllerTutorial;
@@ -267,10 +294,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB1EB57B23C34C60003F5683 /* View.swift in Sources */,
+				CB1EB58523C35014003F5683 /* CoreDataService.swift in Sources */,
+				CB1EB57D23C34D1A003F5683 /* CollectionViewCellViewModel.swift in Sources */,
 				CB1EB51023BF383F003F5683 /* ViewController.swift in Sources */,
+				CB1EB58923C35935003F5683 /* CollectionViewItemDelegate.swift in Sources */,
 				CB1EB53E23BF394F003F5683 /* CollectionViewItem.swift in Sources */,
 				CB1EB50E23BF383F003F5683 /* AppDelegate.swift in Sources */,
-				CB1EB54323BF3E4A003F5683 /* FetchController.swift in Sources */,
+				CB1EB58123C34F0E003F5683 /* DataSourceCoreDataImpl.swift in Sources */,
+				CB1EB57923C34A3D003F5683 /* ViewModelAssembler.swift in Sources */,
+				CB1EB57723C34A35003F5683 /* ViewModel.swift in Sources */,
+				CB1EB57F23C34EF9003F5683 /* DataSource.swift in Sources */,
+				CB1EB58723C35590003F5683 /* DataSourceObserver.swift in Sources */,
+				CB1EB58323C34F58003F5683 /* DataSourceCoreDataImplAssembler.swift in Sources */,
 				CB1EB51323BF383F003F5683 /* fetchControllerTutorial.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
